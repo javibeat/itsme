@@ -19,21 +19,21 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: white; /* color de fondo para toda la anchura */
-    padding: 5px; /* margen alrededor de la cápsula del menú */
+    background-color: white; /* Fondo del contenedor del menú */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    text-align: center; /* centra el contenido del menú */
 }
 
 .bottom-nav {
-    display: inline-flex; /* se ajusta al contenido y se centra */
-    justify-content: center; /* centra los elementos del menú horizontalmente */
+    display: inline-flex;
+    justify-content: space-around;
     align-items: center;
-    background-color: #FFD700; /* color de fondo de la cápsula del menú */
-    border-radius: 35px; /* bordes más redondeados */
+    background-color: #FFD700; /* Color de fondo del menú */
+    border-radius: 35px; /* Aumento del border-radius */
+    margin: 10px auto; /* Margen para que no ocupe todo el ancho */
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* Relativo al contenedor fijo */
 }
 
 .nav-item {
@@ -41,7 +41,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
     text-decoration: none;
     color: black;
 }
@@ -58,6 +57,7 @@ h1 {
     font-size: 12px;
     text-align: center;
 }
+
 /*----- FIN MENÚ ------*/
 
 .cards-container {
