@@ -23,18 +23,17 @@ h1 {
     padding: 5px; /* margen alrededor de la cápsula del menú */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    text-align: center; /* centra el contenido del menú */
 }
 
 .bottom-nav {
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex; /* se ajusta al contenido y se centra */
+    justify-content: center; /* centra los elementos del menú horizontalmente */
     align-items: center;
     background-color: #FFD700; /* color de fondo de la cápsula del menú */
-    border-radius: 45px; /* bordes más redondeados */
-    margin: auto;
-    max-width: calc(100% - 20px); /* asegura un margen en los lados */
+    border-radius: 35px; /* bordes más redondeados */
     padding: 10px;
-    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-item {
