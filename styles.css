@@ -3,9 +3,14 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
     background-color: #f7f7f7;
-    padding-bottom: 100px; /* espacio adicional en la parte inferior para no cubrir el contenido con el menú */
+    padding-bottom: 90px; /* espacio extra para evitar que el contenido se superponga al menú */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /*----- MENÚ ------*/
@@ -13,22 +18,22 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: white; /* o el color que prefieras */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-    z-index: 10;
-    padding: 5px 0; /* Espacio adicional para el menú cápsula */
+    right: 0;
+    background-color: white; /* color de fondo para toda la anchura */
+    padding: 5px; /* margen alrededor de la cápsula del menú */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 
 .bottom-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0 auto;
-    background-color: #FFD700; /* Color de fondo de la cápsula */
-    border-radius: 30px; /* Ajuste para la forma de cápsula */
+    background-color: #FFD700; /* color de fondo de la cápsula del menú */
+    border-radius: 35px; /* bordes más redondeados */
+    margin: auto;
+    max-width: calc(100% - 20px); /* asegura un margen en los lados */
     padding: 10px;
-    max-width: 800px; /* o el ancho máximo que prefieras */
     box-sizing: border-box;
 }
 
@@ -39,28 +44,22 @@ body {
     justify-content: center;
     padding: 10px;
     text-decoration: none;
-    color: black; /* o el color que prefieras */
+    color: black;
 }
 
 .nav-item.active {
-    color: #007bff; /* o el color que prefieras para el ítem activo */
+    color: #007bff;
 }
 
 .icon {
-    font-size: 24px; /* o el tamaño que prefieras */
+    font-size: 24px;
 }
 
 .label {
-    font-size: 12px; /* o el tamaño que prefieras */
+    font-size: 12px;
     text-align: center;
 }
 /*----- FIN MENÚ ------*/
-
-h1 {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
 .cards-container {
     display: flex;
