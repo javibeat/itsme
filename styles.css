@@ -30,7 +30,7 @@ h1 {
     justify-content: space-around;
     align-items: center;
     background-color: #FFD700; /* color de fondo de la cápsula del menú */
-    border-radius: 35px; /* bordes más redondeados */
+    border-radius: 45px; /* bordes más redondeados */
     margin: auto;
     max-width: calc(100% - 20px); /* asegura un margen en los lados */
     padding: 10px;
