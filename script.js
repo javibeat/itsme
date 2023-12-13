@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Código existente de Sortable para arrastrar y soltar
     var el = document.querySelector('.cards-container');
     var sortable = Sortable.create(el, {
         animation: 150,
@@ -16,29 +17,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Asumiendo que '.card' es la clase de tus tarjetas
+    // Código existente para la navegación por teclado en las tarjetas
     const cards = document.querySelectorAll('.card');
-
     cards.forEach(card => {
-        card.setAttribute('tabindex', '0'); // Hacer que cada tarjeta sea enfocable
+        card.setAttribute('tabindex', '0');
         card.addEventListener('keydown', (e) => {
-            // Obtén el índice de la tarjeta actual enfocada
             const currentCard = document.activeElement;
             const currentIndex = Array.from(cards).indexOf(currentCard);
 
             let nextIndex;
             if (e.key === 'ArrowRight') {
-                // Enfocar la siguiente tarjeta
                 nextIndex = (currentIndex + 1) % cards.length;
                 cards[nextIndex].focus();
             } else if (e.key === 'ArrowLeft') {
-                // Enfocar la tarjeta anterior
                 nextIndex = (currentIndex - 1 + cards.length) % cards.length;
                 cards[nextIndex].focus();
             } else if (e.key === 'Enter') {
-                // Activar algo cuando se presiona Enter, como abrir un enlace
                 currentCard.click();
             }
         });
     });
+
+    // Función para actualizar el elemento nav-item activo
+    const updateActiveNavItem = () => {
+        const path = window.location.pathname;
+        const page = path.split("/").pop().split(".")[0]; // Esto asume un nombre de archivo como 'index.html'
+
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        const activeNavItem = document.getElementById(`nav-${page}`);
+        if (activeNavItem) {
+            activeNavItem.classList.add('active');
+        }
+    };
+
+    updateActiveNavItem();
 });
