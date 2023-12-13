@@ -14,6 +14,7 @@ h1 {
 }
 
 /*----- MENÚ ------*/
+
 .bottom-nav-container {
     position: fixed;
     bottom: 0;
@@ -57,6 +58,11 @@ h1 {
     text-align: center;
 }
 
+@media (min-width: 768px) {
+    .nav-container {
+      justify-content: space-evenly;
+    }
+  }
 
 /*----- FIN MENÚ ------*/
 
@@ -96,6 +102,17 @@ h1 {
     text-align: center;
     bottom: 8px; /* Adjust as needed */
     left: 8px;
+}
+
+/* Estilo para el elemento mientras se arrastra */
+.dragging {
+    opacity: 0.4; /* Haz el elemento arrastrado semi-transparente */
+}
+
+/* Estilo para el espacio vacío dejado por el elemento arrastrado */
+.ghost {
+    opacity: 0.4; /* Haz el espacio vacío visible con semi-transparencia */
+    background: #C8EBFB; /* Color de fondo para el espacio vacío */
 }
 
 @media (min-width: 768px) {
