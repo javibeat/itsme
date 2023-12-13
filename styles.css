@@ -18,7 +18,9 @@ h1 {
 .bottom-nav-container {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    /* width: 100%; */
+    left: 0;
+    right: 0;
     background-color: #ffffff; /* Fondo blanco para toda la barra */
     padding: 10px 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
@@ -115,6 +117,7 @@ h1 {
 .ghost {
     opacity: 0.4; /* Haz el espacio vacío visible con semi-transparencia */
     background: #C8EBFB; /* Color de fondo para el espacio vacío */
+    border-style: dashed;
 }
 
 @media (min-width: 768px) {
