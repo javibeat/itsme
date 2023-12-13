@@ -40,17 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para actualizar el elemento nav-item activo
     const updateActiveNavItem = () => {
-        const path = window.location.pathname;
-        const page = path.split("/").pop().split(".")[0]; // Esto asume un nombre de archivo como 'index.html'
+        // Obtén la URL completa
+        const currentUrl = window.location.href;
 
+        // Quita la clase 'active' de todos los elementos del menú
         document.querySelectorAll('.nav-item').forEach(item => {
             item.classList.remove('active');
         });
 
-        const activeNavItem = document.getElementById(`nav-${page}`);
-        if (activeNavItem) {
-            activeNavItem.classList.add('active');
-        }
+        // Busca y activa el enlace del menú correcto
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const page = item.getAttribute('data-page');
+            if (currentUrl.endsWith(`${page}.html`) || (page === 'home' && currentUrl.endsWith('index.html'))) {
+                item.classList.add('active');
+            }
+        });
     };
 
     updateActiveNavItem();
