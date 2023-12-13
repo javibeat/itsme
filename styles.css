@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    width: calc(50% - 20px); /* Ajuste para dos tarjetas por línea en móvil */
+    height: 0; /* Important to maintain the aspect ratio */
+    padding-bottom: calc(50% - 20px); /* Padding-bottom to maintain the square aspect */
+    box-sizing: border-box;
+}
+
+.card img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+}
+
+.card .username {
+    position: absolute;
+    width: calc(100% - 16px); /* Subtracting the padding and space for the icon */
+    text-align: center;
+    bottom: 8px; /* Adjust as needed */
+    left: 8px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: calc(25% - 20px); /* Ajuste para cuatro tarjetas por línea en escritorio */
+        padding-bottom: calc(25% - 20px); /* Padding-bottom to maintain the square aspect */
+    }
+}
