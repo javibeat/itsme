@@ -7,6 +7,46 @@ body {
     background-color: #f7f7f7;
 }
 
+/*-----MENÚ------*/
+
+.bottom-nav {
+    position: fixed;
+    bottom: 10px; /* Ajuste a tu gusto */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    border-radius: 30px; /* Ajuste para la forma de cápsula */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item.active {
+    color: #007bff; /* O el color que prefieras para el ítem activo */
+}
+
+.icon {
+    font-size: 24px; /* Ajuste a tu gusto */
+}
+
+.label {
+    font-size: 12px; /* Ajuste a tu gusto */
+    text-align: center;
+}
+
+/*-----MENU END----*/
+
 h1 {
     display: flex;
     margin: auto;
