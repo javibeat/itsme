@@ -54,6 +54,17 @@ h1 {
     left: 8px;
 }
 
+/* Estilo para el elemento mientras se arrastra */
+.dragging {
+    opacity: 0.4; /* Haz el elemento arrastrado semi-transparente */
+}
+
+/* Estilo para el espacio vacío dejado por el elemento arrastrado */
+.ghost {
+    opacity: 0.4; /* Haz el espacio vacío visible con semi-transparencia */
+    background: #C8EBFB; /* Color de fondo para el espacio vacío */
+}
+
 @media (min-width: 768px) {
     .card {
         width: calc(25% - 20px); /* Ajuste para cuatro tarjetas por línea en escritorio */
