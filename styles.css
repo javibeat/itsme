@@ -44,8 +44,11 @@ h1 {
     transition: color 0.3s; /* Transición suave para cambios de color */
 }
 
+/* Estilos para el elemento del menú activo */
 .nav-item.active {
-    color: #007bff;
+    color: #007bff; /* Color para el enlace activo, por ejemplo, un azul */
+    font-weight: bold; /* Hacer el texto un poco más grueso */
+    /* Otros estilos que quieras para destacar el enlace activo */
 }
 
 .icon {

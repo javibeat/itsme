@@ -10,16 +10,17 @@
 
 <body>
 
-    <div id="menu-container">
+    <div id="menu-container"></div>
     <script>
-        document.getElementById('menu-container').innerHTML = 'Cargando menú...';
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('menu-container').innerHTML = data;
+                // Marcar el enlace de inicio como activo
+                document.querySelector('.nav-item[data-page="search"]').classList.add('active');
             });
     </script>
-    </div>
+
 
     <h1>IT'S ME</h1>
 

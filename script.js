@@ -39,25 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Función para marcar el elemento del menú como 'active'
-    function setActiveMenuItem() {
-        // Obtén todos los elementos del menú
-        const menuItems = document.querySelectorAll('.nav-item');
-        // Elimina la clase 'active' de todos los elementos
-        menuItems.forEach(item => item.classList.remove('active'));
-
-        // Determina la página actual basada en la URL
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-        // Agrega la clase 'active' al elemento del menú correspondiente a la página actual
-        menuItems.forEach(item => {
-            if (item.href.includes(currentPage)) {
-                item.classList.add('active');
-            }
-        });
-    }
-
-    // Llama a la función para establecer el elemento activo
-    setActiveMenuItem();
 });
