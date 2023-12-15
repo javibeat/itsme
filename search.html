@@ -10,7 +10,7 @@
 
 <body>
 
-    <div id="menu-container"></div>
+    <div id="menu-container">
     <script>
         document.getElementById('menu-container').innerHTML = 'Cargando menú...';
         fetch('menu.html')
@@ -19,6 +19,7 @@
                 document.getElementById('menu-container').innerHTML = data;
             });
     </script>
+    </div>
 
     <h1>IT'S ME</h1>
 

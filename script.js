@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Código existente de Sortable para arrastrar y soltar
-    var el = document.querySelector('.cards-container');
-    var sortable = Sortable.create(el, {
-        animation: 150,
-        chosenClass: "selected",
-        dragClass: "drag",
-        delay: 100,
-        delayOnTouchOnly: true,
-        ghostClass: "ghost",
-        
-        onStart: function (evt) {
-            evt.item.classList.add('dragging');
-        },
-        onEnd: function (evt) {
-            evt.item.classList.remove('dragging');
-        }
-    });
+    // Código para la funcionalidad de arrastrar y soltar
+    if (document.querySelector('.cards-container')) {
+        var el = document.querySelector('.cards-container');
+        var sortable = Sortable.create(el, {
+            animation: 150,
+            chosenClass: "selected",
+            dragClass: "drag",
+            delay: 100,
+            delayOnTouchOnly: true,
+            ghostClass: "ghost",
 
-    // Código existente para la navegación por teclado en las tarjetas
+            onStart: function (evt) {
+                evt.item.classList.add('dragging');
+            },
+            onEnd: function (evt) {
+                evt.item.classList.remove('dragging');
+            }
+        });
+    }
+
+    // Código para la navegación por teclado en las tarjetas
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.setAttribute('tabindex', '0');
@@ -38,24 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Función para actualizar el elemento nav-item activo
-    const updateActiveNavItem = () => {
-        // Obtén la URL completa
-        const currentUrl = window.location.href;
+    // Función para marcar el elemento del menú como 'active'
+    function setActiveMenuItem() {
+        // Obtén todos los elementos del menú
+        const menuItems = document.querySelectorAll('.nav-item');
+        // Elimina la clase 'active' de todos los elementos
+        menuItems.forEach(item => item.classList.remove('active'));
 
-        // Quita la clase 'active' de todos los elementos del menú
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.remove('active');
-        });
+        // Determina la página actual basada en la URL
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-        // Busca y activa el enlace del menú correcto
-        document.querySelectorAll('.nav-item').forEach(item => {
-            const page = item.getAttribute('data-page');
-            if (currentUrl.endsWith(`${page}.html`) || (page === 'home' && currentUrl.endsWith('index.html'))) {
+        // Agrega la clase 'active' al elemento del menú correspondiente a la página actual
+        menuItems.forEach(item => {
+            if (item.href.includes(currentPage)) {
                 item.classList.add('active');
             }
         });
-    };
+    }
 
-    updateActiveNavItem();
+    // Llama a la función para establecer el elemento activo
+    setActiveMenuItem();
 });
